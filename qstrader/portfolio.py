@@ -34,7 +34,7 @@ class Portfolio(object):
             if self.price_handler.istick():
                 bid, ask = self.price_handler.get_best_bid_ask(ticker)
             else:
-                close_price = self.price_handler.get_last_close(ticker)
+                close_price = self.price_handler.get_last_adjclose(ticker)
                 bid = close_price
                 ask = close_price
             pt.update_market_value(bid, ask)
@@ -61,7 +61,7 @@ class Portfolio(object):
             if self.price_handler.istick():
                 bid, ask = self.price_handler.get_best_bid_ask(ticker)
             else:
-                close_price = self.price_handler.get_last_close(ticker)
+                close_price = self.price_handler.get_last_adjclose(ticker)
                 bid = close_price
                 ask = close_price
             position = Position(
@@ -96,7 +96,7 @@ class Portfolio(object):
             if self.price_handler.istick():
                 bid, ask = self.price_handler.get_best_bid_ask(ticker)
             else:
-                close_price = self.price_handler.get_last_close(ticker)
+                close_price = self.price_handler.get_last_adjclose(ticker)
                 bid = close_price
                 ask = close_price
             self.positions[ticker].update_market_value(bid, ask)
