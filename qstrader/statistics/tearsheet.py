@@ -57,7 +57,7 @@ class TearsheetStatistics(AbstractStatistics):
         )
         if self.benchmark is not None:
             self.equity_benchmark[timestamp] = PriceParser.display(
-                self.price_handler.get_last_adjclose(self.benchmark)
+                self.price_handler.get_last_close(self.benchmark)
             )
 
     def get_results(self):
